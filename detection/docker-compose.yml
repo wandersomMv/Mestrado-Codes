@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - prometheus
+      
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+     - ./prometheus.yml:/etc/prometheus/prometheus.yml  # Monta o arquivo prometheus.yml dentro do contêiner.
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000

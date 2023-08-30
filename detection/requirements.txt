@@ -1,0 +1,13 @@
+flask
+torch
+opencv-python
+pillow
+pandas
+requests
+psutil
+torchvision
+pyyaml
+tqdm
+ultralytics
+prometheus-flask-exporter
+prometheus_client
