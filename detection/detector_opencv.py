@@ -4,7 +4,11 @@ from PIL import Image
 import numpy as np
 
 # Carregar o modelo pré-treinado
+<<<<<<< HEAD
 model = torch.hub.load('ultralytics/yolov8', 'yolov8s')
+=======
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
+>>>>>>> 3379e383741fb2b410ec3e9326dbfcf09f43759e
 
 # Definir classes dos objetos que o modelo pode detectar
 classes = ['person', 'car', 'cat', 'dog']  # Exemplo de classes
