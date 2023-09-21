@@ -1,0 +1,17 @@
+global:
+  scrape_interval: 5s
+  # Outras configurações globais, se houver.
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']  # Endpoint do próprio Prometheus.
+
+  - job_name: 'app'
+    static_configs:
+      - targets: ['app:5000']  # Endpoint do seu aplicativo Flask.
+
+    # Configuração de labels para identificar as métricas coletadas do Flask.
+    metrics_path: '/metrics'  # Caminho onde o Flask expõe as métricas (deve corresponder ao caminho em sua aplicação Flask).
+    params:
+      module: ['app']  # Rótulo opcional para identificar a fonte das métricas.
